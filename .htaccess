@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+
+   RewriteEngine on
+   # RewriteBase /
+
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-d
+
+   # REDIRECT ASSETS (in dev: to avoid php under pages)
+   # RewriteRule ^(.*)\.(gif|jpeg|jpg|png)$ content/pages/$1 [L]
+   
+   # Friendly URLS
+   SetEnv FRIENDLY_URLS true
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteRule ^(.*)$ index.php?p=$1 
+  
+</IfModule>
