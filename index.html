@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Zeroquery : ZeroQuery: Just Simple Website PHP Framework" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Zeroquery</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/adooxen/zeroquery">View on GitHub</a>
+
+          <h1 id="project_title">Zeroquery</h1>
+          <h2 id="project_tagline">ZeroQuery: Just Simple Website PHP Framework</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/adooxen/zeroquery/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/adooxen/zeroquery/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Zero Query - Quick Start Guide</h1>
+
+<h2>Installation</h2>
+
+<p>Download, and uncompress to any folder under your web server document root.</p>
+
+<p>Enjoy it!</p>
+
+<h2>Customization</h2>
+
+<h3>How to create new pages</h3>
+
+<p>Create a folder under 'content'. The name of the folder will be the name of your page. Under the page folder create a file named 'index.php'.</p>
+
+<p>Thats all! The menu item will be created automatically and you can access your page at example.com/youpagename.</p>
+
+<h3>How to define Page Order</h3>
+
+<p>If you want to sort your pages, prefix the page folder name with a number + '.'. For example a folder '1. Home' will create a page at the first position of the menu, that can be accessed at example.com/home</p>
+
+<h3>How to exclude a page from main menu</h3>
+
+<p>Prefix the page name with '0.'</p>
+
+<h3>How to include page-level javascript / css</h3>
+
+<p>Yor page needs custom css or javascript? The only thing you need to do is create a css folder containing 'example.css' or a js folder containing 'example.js'</p>
+
+<h3>How to Build internal URL's</h3>
+
+<p>To include template images:</p>
+
+<p><code>&lt;?php echo TEMPLATE_PATH?&gt;/images/xxxxxx.png</code>
+Each page can render custom images that are not in the template. To include page images, prefix the image url with page path: Example:</p>
+
+<p><code>&lt;img src="&lt;?php echo $this-&gt;path."/img/project2.png" ; ?&gt;"&gt;</code></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Zeroquery maintained by <a href="https://github.com/adooxen">adooxen</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
