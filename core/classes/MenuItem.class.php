@@ -54,13 +54,16 @@ class MenuItem {
 	 */
 	var $menu ;
 	
+	
+	var $target;
+	
 
 
 	function getPage() {
 		return $this->page;
 	}
 	
-	function __construct($file , $title, $link, $alias ,  $active = false, $order = null ) {
+	function __construct($file , $title, $link, $alias ,  $active = false, $order = null, $target = "_self" ) {
 		global $CONF ;
 		
 		$this->file = $file ;
@@ -76,6 +79,8 @@ class MenuItem {
 		 * @var Page
 		 */
 		$this->page = new Page ( $file, $alias  );
+		
+		$this->target = $target;
 	
 	}
 	
