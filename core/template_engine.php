@@ -30,6 +30,7 @@ function get_menu() {
 	$main_menu->output() ;
 }
 
+
 function get_page_id() {
 	global $page ;
 	echo $page->id ;

@@ -6,39 +6,38 @@
  * @author pepe
  *
  */
-class Content {
-	/**
-	 * 
-	 * Enter description here ...
-	 * @var Page
-	 */
-	var $current_page = null ;
+class Router {
 	
 	/**
-	 * 
-	 * Enter description here ...
-	 * @var unknown_type
+	 * @var string
+	 */
+	var $current_page = null ;
+
+	/**
+	 * @var string
+	 */
+	var $parent_page = null ;
+	
+	/**
+	 * Home page canonical name
+	 * @var string
 	 */
 	var $home = null ;
 	
 	
 	/**
-	 * 
-	 * Enter description here ...
+	 * Reference to site main menu 
 	 * @var Menu
 	 */
 	var $main_menu ;
 	
 
-	
-	
+
 	/**
 	 * @return the $current_page
 	 */
-	public function getCurrentPage() {
+	public function getCurrentPageCanonical() {
 		global $CONF ;
-		
-		
 		if ($this->current_page) {
 			return $this->current_page ;
 		}elseif ($CONF['home']){
@@ -47,16 +46,26 @@ class Content {
 			return "home" ;
 		}
 	}
+	
+	/**
+	 * @return the $current_page
+	 */
+	public function getParentPageCanonical() {
+		if ($this->parent_page) {
+			return $this->parent_page ;
+		}
+		return null;
+	}
 
 	/**
-	 * @return the $home
+	 * @return string
 	 */
 	public function getHome() {
 		return $this->home;
 	}
 
 	/**
-	 * @return the $main_menu
+	 * @return Menu
 	 */
 	public function getMainMenu() {
 		return $this->main_menu;
@@ -70,7 +79,7 @@ class Content {
 	}
 
 	/**
-	 * @param unknown_type $home
+	 * @param string $home
 	 */
 	public function setHome($home) {
 		$this->home = $home;
@@ -87,8 +96,11 @@ class Content {
 		if(!isset($_GET['p'])) return ;
 		$args = explode("/", $_GET['p'] ) ;				
 		if ( count($args) ){
-			$this->current_page = $args[0] ;				
+			$this->current_page = end($args) ;
 		} 
+		if (count($args) == 2) {
+			$this->parent_page = $args[0] ;
+		}
 	}
 	
 }
