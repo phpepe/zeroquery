@@ -11,6 +11,7 @@
 	include_once "core/classes/MenuItem.class.php" ;
 	include_once "core/classes/Menu.class.php" ;
 	include_once "core/classes/Page.class.php" ;
+	include_once "core/classes/PageProperties.php";
 	include_once "core/template_engine.php";
 	include_once "core/plugin_engine.php";
 	include_once "core/bootstrap.php";

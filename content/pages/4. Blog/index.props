@@ -1,0 +1,6 @@
+#	Property file
+#
+#	source=[native || http://www.server.com]
+#	target=[_self || _native || _top || _parent]
+source=http://blog.server.com
+target=_blank

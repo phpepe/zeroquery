@@ -65,12 +65,16 @@ class MenuItem {
 	 * @var array
 	 */
 	var $children ;
+	
+	var $target;
+	
+
 
 	function getPage() {
 		return $this->page;
 	}
 	
-	function __construct($file , $title, $link, $alias ,  $active = false, $order = null, $parent = null ) {
+	function __construct($file , $title, $link, $alias ,  $active = false, $order = null, $parent = null, $target = "_self" ) {
 		global $CONF ;
 		
 		$this->file = $file ;
@@ -81,16 +85,11 @@ class MenuItem {
 		$this->order = $order ;
 		$this->parent = null ;
 		$this->children = array();
-		
-		/**
-		 * 
-		 * Pointer to corresponding Page object 
-		 * @var Page
-		 */
 		$this->page = new Page ( $file, $alias  );
 		$this->page->setMenuItem($this);
-	
+		$this->target = $target;
 	}
+		
 	
 	/**
 	 * @return the $title

@@ -23,11 +23,19 @@
 				$title = trim(substr(strstr($file,'.'),1));
 				$alias = strtolower($title);
 				$order = (int)substr($file,0,strpos($file,"."));
+				
 				$link = (!empty($_SERVER['FRIENDLY_URLS'])) ? BASE_URL."/".strtolower($alias) : BASE_URL."?p=".$alias ;
+				
 				if ( strtolower($alias) == $CONF['home'] ) {
 					$link = BASE_URL ;
 				};
-				$item = new MenuItem ($file, $title, $link, $alias , 0 , $order );					
+				$item = new MenuItem ($file, $title, $link, $alias , 0 , $order );	
+				$pageProps = new PageProperties($pages_dir . $file);
+				
+				if ($pageProps->isExternalLink()) {
+					$item->link = $pageProps->prop("source");
+					$item->target = $pageProps->prop("target");
+				}				
 				$main_menu->addItem( $item );
 				
 				// Scan Subpages
