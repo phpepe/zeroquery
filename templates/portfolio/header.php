@@ -15,7 +15,8 @@
     
     <link rel="stylesheet" href="<?php echo BASE_URL."/".TEMPLATE_PATH ?>style.css" type="text/css" media="screen" />
     <?php $page->css();?> <!-- Include page specific css -->
-    <script src="<?php echo TEMPLATE_PATH ?>js/jquery.min.js" type="text/javascript"></script>
+    <script src="<?php echo BASE_URL."/".TEMPLATE_PATH ?>js/jquery.min.js" type="text/javascript"></script>
+    <script src="<?php echo BASE_URL."/".TEMPLATE_PATH ?>js/submenu.js" type="text/javascript"></script>
 	<?php $page->js() ?> <!-- include page specific js -->
     
 </head>

@@ -129,3 +129,24 @@ footer ul li a { font-size: 24px; margin-left: 10px; }
 footer ul li img { vertical-align: bottom; position: relative; top: 2px; }
 div.clear { clear: both }
 
+
+li.sub-menu a:hover {
+	/*color: red;*/
+}	
+
+li.sub-menu ul {
+	display: none;
+	position: absolute;
+	min-width: 120px;
+	height: auto;
+	background: #000;
+	margin-top: 0;
+	margin-right: 35px;
+	padding: 8px;
+	box-shadow: 0px 5px 8px -3px #000;
+}
+
+li.sub-menu ul li {
+	display: block;
+	margin: 10px;
+}

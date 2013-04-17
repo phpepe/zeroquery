@@ -160,4 +160,8 @@ class Page  {
 	}
 	
 	
+	function getProps() {
+		$props = new PageProperties($this->path);
+		return $props;		
+	}
 }
