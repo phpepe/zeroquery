@@ -17,9 +17,12 @@
 		private function readProperties() {
 			if ($handle = opendir($this->pageDir)) {
 				while (false !== ($file = readdir($handle))) {
-	        		if (end(explode('.', $file)) == "props") {
-	        			$this->parseProperties($file);
-	        		}
+	        		if (sizeof(explode('.', $file) > 0)) {
+						$file_name = explode('.', $file);
+						if (end($file_name) == "props") {
+							$this->parseProperties($file);
+						}
+					}
 	    		}
 			}
 		}
